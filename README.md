@@ -1,16 +1,18 @@
-# UFProdReg – nyt WPF UI
+# UFProdReg – UI-ændringer til NewWPF
 
-[**Download UFProdReg-UI.zip**](https://github.com/lukeking69/cook/raw/refs/heads/ufprodreg-ui-download/UFProdReg-UI.zip)
+[**Download UFProdReg-UI-Changes.zip**](https://raw.githubusercontent.com/lukeking69/cook/ufprodreg-ui-download/UFProdReg-UI-Changes.zip)
 
-Zip-filen indeholder det opdaterede Caliburn.Micro-projekt med 21 UI-sider, fælles styles, ViewModels, dokumentation og en kompileret Windows UI-preview.
+Pakken indeholder UI klar til senere binding: 21 separate Views og ViewModels, typed DTO-rækker, tomme valglister, navngivne ICommand-properties, fælles styles og statusindikatorer. Caliburn.Micro, MainMenu, SubMenu og ActiveItem følger den uploadede NewWPF-base. De nye sider indeholder ingen produktions-, database- eller hardwareimplementering.
 
-1. Download zip-filen, og pak hele indholdet ud med **7-Zip** eller et andet program, der understøtter AES-256 ZIP. Brug adgangskoden fra den private chat.
-2. Åbn `UFProdReg-UI/Start-UI.cmd` på Windows med .NET Framework 4.8.
-3. Åbn `UFProdReg-UI/NewProgram.sln` i Visual Studio for at arbejde videre med kildekoden.
+Arkivet er en almindelig, ukrypteret ZIP på 128.892 bytes. Det indeholder kun 85 tilføjede og 9 ændrede filer, inklusive vejledning og filmanifest. Alle eksisterende NuGet-pakker og versionsnumre bevares.
 
-Læs `UFProdReg-UI/README-UI.md` og dokumentationen i pakken. Produktionshandlinger kræver en rigtig backendadapter og er deaktiveret i previewen. Windows-visning og forbindelser til produktionssystemer er endnu ikke testet.
+1. Pak den oprindeligt uploadede `NewWPF_WithCaliburnMicro.zip` ud.
+2. Pak ændringszippen ud med Windows' almindelige udpakker.
+3. Kopiér zipindholdet til basens rodmappe, hvor `NewProgram.sln` ligger. Bevar undermapperne, og overskriv de eksisterende filer med samme navn.
+4. Åbn løsningen i Visual Studio, gendan de originale NuGet-pakker fra virksomhedsfeeds, og vælg `newWPF` som startup-projekt med `Release | x86`.
 
-Pakken er krypteret med AES-256, fordi de originale konfigurationer og nødvendige biblioteker indeholder gemte adgangsoplysninger. Adgangskoden udleveres separat i den private chat. Alle udpakkede filers indhold er identisk med den færdige UI-pakke i cloudmiljøet.
+Brug en frisk kopi af originalbasen til denne pakke. `README-UI-CHANGES.md` forklarer bindings og tilkobling af kommandoer. `UI-CHANGES.json` viser alle tilføjede/ændrede filstier med checksums.
 
+XAML og kildekode kompilerer med 0 fejl og 0 advarsler mod .NET Framework 4.8. Cloudkontrollen brugte de reelle afhængighedsassemblies; lokale build-overrides og biblioteker er udeladt fra pakken. Layout og runtimebindings skal afprøves på Windows.
 
-SHA-256: `752d30d606ca5b069bdf74ab5586a9969aeca3414241ed72a0cd635df1501e89`
+SHA-256: `78e1a36bfd80edb1402e6a1a41b1eaf7e63118d5d6b388578959dcb4c3b53a56`
